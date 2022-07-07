@@ -9,6 +9,8 @@ using System.IO;
 
 public class MainManager : MonoBehaviour
 {
+    public static MainManager Instance;
+
     public Brick BrickPrefab;
     public int LineCount = 6;
     public Rigidbody Ball;
@@ -24,8 +26,8 @@ public class MainManager : MonoBehaviour
     public TextMeshProUGUI CurrentPlayerName;
     public TextMeshProUGUI BestPlayerName;
 
-    private static string BestPlayer;
-    private static int BestScore;
+    public static string BestPlayer;
+    public static int BestScore;
 
     // Start is called before the first frame update
     private void Awake()
@@ -153,7 +155,7 @@ public class MainManager : MonoBehaviour
     }
 
     [System.Serializable]
-    class SaveData
+   public class SaveData
     {
         public int HighiestScore;
         public string TheBestPlayer;
